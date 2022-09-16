@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include "polynomials.h"
 using namespace std;
 
 double plo(vector<double> &cof, double x) {

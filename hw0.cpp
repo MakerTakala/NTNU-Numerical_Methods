@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 double p(double x) {
     double ans = 1;
@@ -9,7 +10,7 @@ double p(double x) {
 }
 
 int main() {
-    printf("%.4lf\n", p(1.0001));
+    cout<<p(1.0001)<<endl;
 
     return 0;
 }
