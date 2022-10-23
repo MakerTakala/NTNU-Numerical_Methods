@@ -3,11 +3,11 @@
 #include <cmath>
 using namespace std;
 
-int n = 4;
+int n = 3;
 
 
 int main() {
-    double input[4][5] = {{2.0, 1.0, 0.0, 0.0, 1.0}, {0.0, 1.0, 2.0, 0.0, 1.0}, {2.0, 4.0, 5.0, 1.0, 2.0}, {8.0, 5.0, 0.0, 3.0, 0.0}};
+    double input[3][4] = {{18, 10, -2, -105}, {-10, -16, -2, -88}, {-6, -2, -2, -108}};
     double L[5][5] = {{0}};
     vector<double> ans(n, 0);
     for(int i = 0; i < n; i++) {
@@ -24,21 +24,6 @@ int main() {
         }
     }
 
-    cout<<"U:"<<endl;
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j<= n; j++) {
-            cout<<input[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-
-    cout<<"L:"<<endl;
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j<= n; j++) {
-            cout<<L[i][j]<<" ";
-        }
-        cout<<endl;
-    }
 
     for(int i = n - 1; i >= 0; i--) {
         for(int j = i + 1; j < n; j++) {

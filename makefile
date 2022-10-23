@@ -5,3 +5,5 @@ all:
 	g++ hw3.cpp -o hw3
 	g++ hw4.cpp -o hw4
 	g++ hw5.cpp -o hw5
+	g++ hw6.cpp -o hw6
+	g++ hw7.cpp -o hw7
