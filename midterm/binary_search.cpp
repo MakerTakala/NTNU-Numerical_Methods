@@ -2,13 +2,13 @@
 #include <cmath>
 using namespace std;
 
-double func(double m) {
-    return 0;
+double func(double x) {
+    return x * x * x + 4 * x * x - 10;
 }
 
 int main() {
-    double l = 3, r = 4;
-    while(r - l > 1e-6 && l < r) {
+    double l = 1, r = 2;
+    while(r - l > 1e-7 && l < r) {
         double mid =  l + (r - l) / 2.0;
         double cur = func(mid);
         if(cur > 0) {

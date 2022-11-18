@@ -14,6 +14,12 @@ vector<double> guss(vector<vector<double> > a, vector<double> b) {
     }
     
     for(int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                cout<<a[i][j]<<" ";
+            }
+            cout<<b[i]<<endl;
+        }
         for(int j = i + 1; j < n; j++) {
             double times = a[j][i] / a[i][i];
             L[j][i] = times;
@@ -22,6 +28,7 @@ vector<double> guss(vector<vector<double> > a, vector<double> b) {
             }
             b[j] -= b[i] * times;
         }
+        
     }
 
     cout<<"U:"<<endl;
@@ -71,6 +78,7 @@ vector<double> guss_swap(vector<vector<double> > a, vector<double> b) {
             swap(a[i][j], a[index][j]);
             swap(P[i][j], P[index][j]);
         }
+        swap(b[i], b[index]);
     }
 
     cout<<"P:"<<endl;
@@ -82,17 +90,38 @@ vector<double> guss_swap(vector<vector<double> > a, vector<double> b) {
     }
     
     return guss(a, b);
-    
 }
 
 
 int main() {
-    int n = 0;
-    vector<vector<double> > a;
-    vector<double> b;
+    vector<vector<double> > a(4, vector<double>(4, 0));
+    vector<double> b(4, 0);
+   
+    a[0][0] = 1.19;
+    a[0][1] = 2.11;
+    a[0][2] = -100;
+    a[0][3] = 1;
+    a[1][0] = 14.2;
+    a[1][1] = -0.122;
+    a[1][2] = 12.2;
+    a[1][3] = -1;
+    a[2][0] = 0;
+    a[2][1] = 100;
+    a[2][2] = -99.9;
+    a[2][3] = 1;
+    a[3][0] = 15.3;
+    a[3][1] = 0.11;
+    a[3][2] = -13.1;
+    a[3][3] = -1;
+    b[0] = 1.12;
+    b[1] = 3.44;
+    b[2] = 2.15;
+    b[3] = 4.16;
+
     vector<double> ans = guss_swap(a, b);
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < ans.size(); i++) {
         cout<<ans[i]<<" ";
     }
+    cout<<endl;
     return 0;
 } 

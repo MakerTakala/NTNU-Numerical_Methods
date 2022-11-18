@@ -5,43 +5,43 @@
 using namespace std;
 
 double func0(double x1, double x2, double x3) {
-    return 0;
+    return sin(x1) + x2 * x2 + log(x3) - 7;
 }
 double func1(double x1, double x2, double x3) {
-    return 0;
+    return 3 * x1 + 2 * x2 - x3 * x3 * x3 + 1;
 }
 double func2(double x1, double x2, double x3) {
-    return 0;
+    return x1 + x2 + x3 - 5;
 }
 
 double func00(double x1, double x2, double x3) {
-    return 0;
+    return cos(x1);
 }
 double func01(double x1, double x2, double x3) {
-    return 0;
+    return 2 * x2;
 }
 double func02(double x1, double x2, double x3) {
-    return 0;
+    return 1.0 / x3;
 }
 
 double func10(double x1, double x2, double x3) {
-    return 0;
+    return 3;
 }
 double func11(double x1, double x2, double x3) {
-    return 0;
+    return 2;
 }
 double func12(double x1, double x2, double x3) {
-    return 0;
+    return -3 * x3 * x3;
 }
 
 double func20(double x1, double x2, double x3) {
-    return 0;
+    return 1;
 }
 double func21(double x1, double x2, double x3) {
-    return 0;
+    return 1;
 }
 double func22(double x1, double x2, double x3) {
-    return 0;
+    return 1;
 }
 
 vector<double> guss(vector<vector<double> > a, vector<double> b) {
@@ -72,7 +72,9 @@ int main() {
     vector<vector<double> > df(3, vector<double>(3, 0));
     vector<double> f(3);
     vector<double> ans(3, 0);
-
+    ans[0] = 0;
+    ans[1] = 2;
+    ans[2] = 2;
     for(int t = 0; t < 10000; t++) {
         df[0][0] = func00(ans[0], ans[1], ans[2]);
         df[0][1] = func01(ans[0], ans[1], ans[2]);
@@ -99,6 +101,7 @@ int main() {
     }
 
     for(int i = 0; i < 3; i++) {
-        cout<<ans[i]<<endl;
+        cout<<ans[i]<<" ";
     }
+    cout<<endl;
 }
