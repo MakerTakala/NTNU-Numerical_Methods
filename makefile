@@ -1,3 +1,4 @@
 all:
 	
-	g++ hw8.cpp -o hw8
+	g++ hw10.cpp -o hw10
+	
