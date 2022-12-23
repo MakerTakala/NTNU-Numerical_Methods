@@ -9,7 +9,7 @@ using namespace std;
 void display(vector<vector<double>> A) {
     for(auto v : A) {
         for(auto x : v) {
-            cout<<setw(10)<<to_string(x)<<" ";
+            cout<<fixed<<setprecision(4)<<setw(10)<<x<<" ";
         }
         cout<<endl;
     }
@@ -83,7 +83,7 @@ void grame_schmidt(vector<vector<double>> A) {
 
 
 int main(){
-    vector<vector<double>> A{{3, -1, 2}, {4, 1, 0}, {-3, 2, 1}, {1, 1, 5}, {-2, 0, 3}};
+    vector<vector<double>> A{{4, 2, 3, 0}, {-2, 3, -1, 1}, {1, 3, -4, 2}, {1, 0, 1, -1}, {3, 1, 3, -2}};
     grame_schmidt(A);
 
     return 0;

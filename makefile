@@ -1,4 +1,4 @@
 all:
 	
-	g++ hw12.cpp -o hw12 -std=c++17
+	g++ hw13.cpp -o hw13 -std=c++17
 	

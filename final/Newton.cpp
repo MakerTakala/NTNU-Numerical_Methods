@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     
-    vector<pair<double, double> > data{{0.6, 1.433329}, {0.7, 1.632316}, {0.8, 1.896481}, {0.9, 2.247908}, {1.0, 2.718282}};
+    vector<pair<double, double> > data{{8.1, 16.94410}, {8.3, 17.56492}, {8.6, 18.50515}, {8.7, 18.82091}};
     int n = data.size();
     vector<double> divided(n, 0);
     vector<double> divided_ans(n, 0);
@@ -21,7 +21,7 @@ int main() {
         divided_ans[i] = divided[0];
     }
 
-    double input = 0.82;
+    double input = 8.4;
     double ans1 = divided_ans[n - 1];
     for(int i = n - 2; i >= 0; i--) {
         ans1 *= (input - data[i].first);

@@ -33,19 +33,13 @@ vector<double> guss(vector<vector<double> > a, vector<double> b) {
 }
 
 int main() {
-    vector<double> x;
-    for(double i = 0; i <= 3; i += 0.25) {
-        x.push_back(i);
-    }
-    vector<double> b{6.3806, 7.1338, 9.1662, 11.5545, 15.6414, 22.7371, 32.0696, 47.0756, 73.1596, 111.4684, 175.9895, 278.5550, 446.4441};
-    int scale_size = 4;
+    vector<double> x{4, 7, 11};
+    
+    vector<double> b{3, 5, 8};
+    int scale_size = 1;
 
-    vector<vector<double> > A(b.size(), vector<double> (scale_size));
-    for(int i = 0; i < b.size(); i++) {
-        for(int j = 0; j < scale_size; j++) {
-            A[i][j] = pow(x[i], j);
-        }
-    }
+    vector<vector<double> > A{{4}, {7}, {11}};
+    
 
     vector<vector<double> > ATA(scale_size, vector<double> (scale_size));
     for(int i = 0; i < scale_size; i++) {
@@ -69,8 +63,9 @@ int main() {
 
     vector<double> ans = guss(ATA, ATb);
 
-    for(int i = 0; i < scale_size; i++) {
-        cout<<ans[i]<<" ";
+    for(int i = scale_size - 1; i >= 0; i--) {
+        
+        cout<<ans[i]<<"x^"<<i<<" ";
     }
     cout<<endl;
 

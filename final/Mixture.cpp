@@ -77,7 +77,7 @@ int main() {
     vector<vector<double>> Dr(n, vector<double>(m, 0));
     vector<double> ans = {0, 0, 0};
 
-    for(int t = 0; t < 100; t++) {
+    for(int t = 0; t < 1000; t++) {
         vector<double> rx(n, 0);
         for(int i = 0; i < n; i++) {
             Dr[i][0] = (ans[0] - node[i][0]) / sqrt( pow(ans[0] - node[i][0], 2) + pow(ans[1] - node[i][1], 2));
